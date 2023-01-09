@@ -45,14 +45,21 @@
               •
               <span class="date ml-1">{{design.date}}</span>
             </div>
-
-            <button
+            <a :href="'#/project/' + idx">
+              <button
+                style="height: 31px; margin-top: 5px;"
+                class="btn-sm btn btn-outline-secondary no-outline"
+              >
+                read more
+              </button>
+            </a>
+            <!-- <button
               style="height: 31px; margin-top: 5px;"
               class="btn-sm btn btn-outline-secondary no-outline"
               @click.prevent="showDesignModalFn(design)"
             >
               read more
-            </button>
+            </button> -->
           </div>
         </div>
       </div>

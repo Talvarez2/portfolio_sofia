@@ -1,12 +1,27 @@
 <template>
   <div id="app">
-    <Navbar @scroll="scrollTo"/>
-    <div class="parent">
-      <Home/>
-      <Portfolio id="portfolio"/>
-      <About id="about" Accordion/>
-      <Contact id="contact"/>
-      <Footer />
+    <div v-if="currentView[0] !== 'project'">
+      <Navbar @scroll="scrollTo"/>
+      <div class="parent">
+        <Home/>
+        <Portfolio id="portfolio"/>
+        <About id="about" Accordion/>
+        <Contact id="contact"/>
+        <Footer />
+      </div>
+    </div>
+    <div v-else>
+      <a href="#/">
+        <button
+          style="height: 31px; margin-top: 5px;"
+          class="btn-sm btn btn-outline-secondary no-outline"
+        >
+          back
+        </button>
+      </a>
+      <div class="parent">
+        <Project :idx="currentView[1]"/>
+      </div>
     </div>
   </div>
 </template>
@@ -19,6 +34,7 @@ import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Accordion from "./components/helpers/Accordion";
+import Project from "./components/Project";
 
 import info from "../info";
 
@@ -29,6 +45,7 @@ export default {
     Home,
     About,
     Portfolio,
+    Project,
     Contact,
     Footer,
     Accordion,
@@ -36,12 +53,21 @@ export default {
   data() {
     return {
       config: info.config,
+      currentPath: window.location.hash
     };
+  },
+  computed: {
+    currentView() {
+      return [this.currentPath.split("/")[1], this.currentPath.split("/")[2]];
+    }
   },
   created() {
     if (this.config.use_cookies) {}
   },
   mounted() {
+    window.addEventListener('hashchange', () => {
+		  this.currentPath = window.location.hash
+		})
     ["about", "contact", "portfolio"].forEach((l) => {
       if (window.location.href.includes(l)) {
         var elementPosition = document.getElementById(l).offsetTop;
