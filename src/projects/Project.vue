@@ -1,96 +1,42 @@
 <template>
   <div id="app">
-    <div v-if="currentView[0] !== 'project'">
-      <Navbar @scroll="scrollTo"/>
-      <div class="parent">
-        <Home/>
-        <Portfolio id="portfolio"/>
-        <About id="about" Accordion/>
-        <Contact id="contact"/>
-        <Footer />
-      </div>
+    <Navbar/>
+    <div v-for="(part, index) in parts">
+      <Description v-if="part.type==='Description'" :idx="parseInt(idx)" :part="index"/>
+      <Picture v-if="part.type==='Picture'" :idx="parseInt(idx)" :part="index"/>
+      <Carousel v-if="part.type==='Carousel'" :idx="parseInt(idx)" :part="index"/>
     </div>
-    <div v-else>
-      <a href="#/">
-        <button
-          style="height: 31px; margin-top: 5px;"
-          class="btn-sm btn btn-outline-secondary no-outline"
-        >
-          back
-        </button>
-      </a>
-      <div class="parent">
-        <Project :idx="parseInt(currentView[1])"/>
-      </div>
-    </div>
+    <Footer/>
   </div>
 </template>
 
 <script>
-import Navbar from "./components/Navbar.vue";
-import Home from "./components/Home";
-import About from "./components/About";
-import Portfolio from "./components/Portfolio";
-import Contact from "./components/Contact";
-import Footer from "./helpers/Footer";
-import Accordion from "./components/helpers/Accordion";
-import Project from "./projects/Project";
+import info from "../../info";
 
-import info from "../info";
+import Navbar from "./Navbar";
+import Carousel from "./Carousel";
+import Description from "./Description";
+import Picture from "./Picture";
+import Footer from "../helpers/Footer";
 
 export default {
-  name: "App",
+  name: "Project",
   components: {
     Navbar,
-    Home,
-    About,
-    Portfolio,
-    Project,
-    Contact,
+    Carousel,
+    Description,
+    Picture,
     Footer,
-    Accordion,
+  },
+  props: {
+    idx: {
+      type: Number,
+    },
   },
   data() {
     return {
-      config: info.config,
-      currentPath: window.location.hash
+      parts: info.projects[this.idx].parts,
     };
-  },
-  computed: {
-    currentView() {
-      return [this.currentPath.split("/")[1], this.currentPath.split("/")[2]];
-    }
-  },
-  created() {
-    if (this.config.use_cookies) {}
-  },
-  mounted() {
-    window.addEventListener('hashchange', () => {
-		  this.currentPath = window.location.hash
-		})
-    ["about", "contact", "portfolio"].forEach((l) => {
-      if (window.location.href.includes(l)) {
-        var elementPosition = document.getElementById(l).offsetTop;
-        window.scrollTo({ top: elementPosition - 35, behavior: "smooth" });
-      }
-    });
-    import('../src/assets/JS/Accordion.js')
-  },
-  methods: {
-    switchMode(mode) {
-      if (this.config.use_cookies) {}
-    },
-    scrollTo(ele) {
-      if (ele == "home") {
-        this.$router.push(`/`).catch(() => {});
-        window.scrollTo({ top: -80, behavior: "smooth" });
-      } else {
-        var elementPosition = document.getElementById(ele).offsetTop;
-        window.scrollTo({ top: elementPosition - 35, behavior: "smooth" });
-        if (this.$router.history.current.path !== `/${ele}`)
-          this.$router.push(`/${ele}`);
-      }
-    },
   },
 };
 </script>

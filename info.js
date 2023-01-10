@@ -247,6 +247,54 @@ let info = {
         "pill reminder app for nessecary drugs for the day."
     },
   ],
+  projects: [
+    {
+      name: "Pill Reminder",
+      folder_name: "beauty",
+      parts: [
+        {
+          "type": "Description", 
+          "title": "Pill Reminder - Mockup", 
+          "subtitle": "Pill Reminder - Mockup Design", 
+          "year": "2022", 
+          "content": "pill reminder app for <b>nessecary</b> drugs for the day."
+        },
+        {
+          "type": "Picture", 
+          "title": "Pill Reminder - Mockup Design",
+          "picture_name": "beauty.png",
+        },
+        {
+          "type": "Carousel", 
+          "title": "Pill Reminder - Design",
+          "picture_folder_name": "carrousel",
+        },
+      ]
+    },
+    {
+      name: "Pill Reminder",
+      folder_name: "pill_reminder",
+      parts: [
+        {
+          "type": "Description", 
+          "title": "Pill  - Mockup Design", 
+          "subtitle": "Pill Reminder - Mockup Design", 
+          "year": "2022", 
+          "content": "pill reminder app for nessecary drugs for the day."
+        },
+        {
+          "type": "Picture", 
+          "title": "Pill Reminder - Mockup Design",
+          "picture_name": "Web 1.png",
+        },
+        {
+          "type": "Carousel", 
+          "title": "Pill Reminder - Mockup Design",
+          "picture_folder_name": "carrousel",
+        },
+      ]
+    },
+  ],
   contact:{
     options: 
     {

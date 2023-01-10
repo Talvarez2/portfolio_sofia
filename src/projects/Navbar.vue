@@ -33,28 +33,9 @@
             <li class="nav-item">
               <a
                 class="nav-link text-dark-red"
-                href="/portfolio"
-                @click.prevent="$emit('scroll', 'portfolio')"
+                href="#"
               >
-                Portafolio
-              </a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link text-dark-red"
-                href="/about"
-                @click.prevent="$emit('scroll', 'about')"
-              >
-                Sobre mi
-              </a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link text-dark-red"
-                href="/contact"
-                @click.prevent="$emit('scroll', 'contact')"
-              >
-                Contacto
+                Inicio
               </a>
             </li>
           </ul>
@@ -63,7 +44,7 @@
     </nav>
   </div>
 </template>
-
+  
 <script>
 import Logo from "../helpers/Logo";
 import info from "../../info";
