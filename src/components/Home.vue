@@ -17,7 +17,7 @@
       </span>
       <div class="row align-items-center overlay description-container">
         <div class="column col-xl-6 col-bg-6 col-md-6 col-sm-12 pt-5">
-          <div class="description">
+          <div class="description text-font">
             <p v-html="description"></p>
           </div>
         </div>

@@ -147,6 +147,7 @@ text-font {
   -moz-osx-font-smoothing: grayscale;
   color: #B4312C;
   width: 100%;
+  text-align: start;
 }
 
 .p-st {

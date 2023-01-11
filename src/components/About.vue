@@ -26,7 +26,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-xl-6 col-bg-6 col-md-6 col-sm-12">
+        <div class="text-font col-xl-6 col-bg-6 col-md-6 col-sm-12">
           <p class="presentation" v-html="presentation.data"></p>
         </div>
         <div class="col-xl-6 col-bg-6 col-md-6 col-sm-12">
