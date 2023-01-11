@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-5 p-st bg-pink2">
+  <div class="pt-5 p-st" :class="bgColor">
     <div
       class="container"
       data-aos="fade"
@@ -11,7 +11,7 @@
       </div>
       <div class="image">
         <img 
-          :src="require(`../../src/assets/projects/${folder_name}/${picture_name}`)" 
+          :src="require(`@/assets/projects/${folder_name}/${picture_name}`)" 
         />
       </div>
     </div>
@@ -33,6 +33,7 @@ export default {
   },
   data() {
     return {
+      bgColor: info.projects[this.idx].parts[this.part].bgColor,
       title: info.projects[this.idx].parts[this.part].title,
       picture_name: info.projects[this.idx].parts[this.part].picture_name,
       folder_name: info.projects[this.idx].folder_name,

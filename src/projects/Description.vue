@@ -1,7 +1,7 @@
 <template>
-  <div class="pt-5 p-st bg-pink2">
+  <div class="pt-5 p-st" :class="bgColor">
     <div
-      class="container"
+      class="container description-container"
       data-aos="fade"
       data-aos-once="true"
       data-aos-duration="1000"
@@ -15,7 +15,7 @@
       <div v-if="year" class="center-text year title-font text-red">
         {{ year }}
       </div>
-      <div v-if="content" class="center-text text-red">
+      <div v-if="content" class="content center-text text-dark-red">
         <p v-html="content"></p>
       </div>
     </div>
@@ -37,6 +37,7 @@ export default {
   },
   data() {
     return {
+      bgColor: info.projects[this.idx].parts[this.part].bgColor,
       title: info.projects[this.idx].parts[this.part].title,
       subtitle: info.projects[this.idx].parts[this.part].subtitle,
       year: info.projects[this.idx].parts[this.part].year,
@@ -47,6 +48,10 @@ export default {
 </script>
 
 <style scoped>
+
+.description-container {
+  padding: 0 15%;
+}
 .center-text {
   text-align: center;
 }
@@ -54,19 +59,24 @@ export default {
 .title {
   font-size: 3em;
   font-weight: 500;
-  padding-bottom: 1em;
+  padding-bottom: 0.3em;
 }
 
 .subtitle {
   font-size: 2em;
   font-weight: 300;
-  padding-bottom: 1em;
+  padding-bottom: 0.3em;
 }
 
 .year {
   font-size: 2em;
   font-weight: 300;
-  padding-bottom: 1em;
+  padding-bottom: 0.3em;
+}
+
+.content {
+  font-size: 1em;
+  padding-bottom: 3em;
 }
 
 </style>

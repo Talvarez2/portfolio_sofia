@@ -2,23 +2,9 @@
   <div id="app">
     <div v-if="currentView[0] !== 'project'">
       <Navbar @scroll="scrollTo"/>
-      <div class="parent">
-        <Home/>
-        <Portfolio id="portfolio"/>
-        <About id="about" Accordion/>
-        <Contact id="contact"/>
-        <Footer />
-      </div>
+      <Homepage :currentView="currentView"/>
     </div>
     <div v-else>
-      <a href="#/">
-        <button
-          style="height: 31px; margin-top: 5px;"
-          class="btn-sm btn btn-outline-secondary no-outline"
-        >
-          back
-        </button>
-      </a>
       <div class="parent">
         <Project :idx="parseInt(currentView[1])"/>
       </div>
@@ -27,13 +13,8 @@
 </template>
 
 <script>
+import Homepage from "./components/Homepage.vue";
 import Navbar from "./components/Navbar.vue";
-import Home from "./components/Home";
-import About from "./components/About";
-import Portfolio from "./components/Portfolio";
-import Contact from "./components/Contact";
-import Footer from "./helpers/Footer";
-import Accordion from "./components/helpers/Accordion";
 import Project from "./projects/Project";
 
 import info from "../info";
@@ -42,18 +23,14 @@ export default {
   name: "App",
   components: {
     Navbar,
-    Home,
-    About,
-    Portfolio,
+    Homepage,
     Project,
-    Contact,
-    Footer,
-    Accordion,
   },
   data() {
     return {
       config: info.config,
-      currentPath: window.location.hash
+      currentPath: window.location.hash,
+      mounted: false,
     };
   },
   computed: {
@@ -61,10 +38,22 @@ export default {
       return [this.currentPath.split("/")[1], this.currentPath.split("/")[2]];
     }
   },
+  watch: {
+    currentPath() {
+      if (this.currentPath.split("/")[1] !== "project") {
+        import('@/assets/JS/Accordion.js');
+      }
+    }
+  },
   created() {
     if (this.config.use_cookies) {}
   },
   mounted() {
+    if(!this.mounted){
+      this.mounted = true;
+      console.log("mounted");
+      import('@/assets/JS/Accordion.js');
+    }
     window.addEventListener('hashchange', () => {
 		  this.currentPath = window.location.hash
 		})
@@ -74,7 +63,6 @@ export default {
         window.scrollTo({ top: elementPosition - 35, behavior: "smooth" });
       }
     });
-    import('../src/assets/JS/Accordion.js')
   },
   methods: {
     switchMode(mode) {
@@ -97,7 +85,7 @@ export default {
 
 <style>
 #app {
-  font-family: "Minion Pro", serif;
+  font-family: "Montserrat", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #B4312C;
@@ -151,6 +139,14 @@ export default {
 .title-font {
   font-family: "Neue Haas Grotesk Display Pro 65", sans-serif !important;
   font-weight: bold !important;
+}
+
+text-font {
+  font-family: "Montserrat", serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #B4312C;
+  width: 100%;
 }
 
 .p-st {

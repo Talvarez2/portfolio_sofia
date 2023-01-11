@@ -9,37 +9,16 @@
       <div class="container">
         <a
           class="navbar-brand"
-          href="/"
-          @click.prevent="$emit('scroll', 'home')"
+          href="#"
         >
           <Logo />
         </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+        <a
+          class="nav-link text-dark-red"
+          href="#"
         >
-          <span style="font-size: 23px;"
-            ><i class="fas fa-bars text-dark-red"></i>
-            </span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a
-                class="nav-link text-dark-red"
-                href="#"
-              >
-                Inicio
-              </a>
-            </li>
-          </ul>
-        </div>
+          Inicio
+        </a>
       </div>
     </nav>
   </div>

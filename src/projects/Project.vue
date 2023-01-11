@@ -4,7 +4,7 @@
     <div v-for="(part, index) in parts">
       <Description v-if="part.type==='Description'" :idx="parseInt(idx)" :part="index"/>
       <Picture v-if="part.type==='Picture'" :idx="parseInt(idx)" :part="index"/>
-      <Carousel v-if="part.type==='Carousel'" :idx="parseInt(idx)" :part="index"/>
+      <CarouselSection v-if="part.type==='Carousel'" :idx="parseInt(idx)" :part="index"/>
     </div>
     <Footer/>
   </div>
@@ -14,7 +14,7 @@
 import info from "../../info";
 
 import Navbar from "./Navbar";
-import Carousel from "./Carousel";
+import CarouselSection from "./CarouselSection";
 import Description from "./Description";
 import Picture from "./Picture";
 import Footer from "../helpers/Footer";
@@ -23,7 +23,7 @@ export default {
   name: "Project",
   components: {
     Navbar,
-    Carousel,
+    CarouselSection,
     Description,
     Picture,
     Footer,

@@ -5,10 +5,9 @@
   "scripts": {
     "serve": "export NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service serve",
     "build": "export NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service build",
-    "lint": "export NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service lint"
+    "lint": "export NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service lint",
+    "update:packages": "node wipe-dependencies.js && rm -rf node_modules && npm update --save-dev && npm update --save"
   },
-
-
   "dependencies": {
     "@chenfengyuan/vue-carousel": "^1.0.5",
     "aos": "^3.0.0-beta.6",
@@ -19,12 +18,14 @@
     "serve": "^11.3.0",
     "v-tooltip": "^2.0.3",
     "vue": "^2.6.11",
+    "vue-carousel": "^0.18.0",
     "vue-cookie": "^1.1.4",
     "vue-nav-tabs": "^0.5.7",
     "vue-parallax-js": "^0.2.3",
     "vue-router": "^3.3.4",
     "vue-scrollto": "^2.18.1",
     "vue-selector": "0.0.1",
+    "vue-simple-accordion": "^0.1.0",
     "vueperslides": "^2.10.2"
   },
   "devDependencies": {
