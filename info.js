@@ -232,7 +232,7 @@ let info = {
         {
           "type": "Description", 
           "bgColor": "bg-pink2",
-          "title": "Pintatón Skatepark", 
+          "title": "Pintatón Skatepark.", 
           "subtitle": "Propuesta Skatepark Parque Las Palmeras (Renca).", 
           "year": "-2022-", 
           "content": "<b>Autoras/es:</b> Emilia Amunátegui, Agustín Contreras, Hugh Halbert, Antonia Riesco y Sofía Álvarez.<br><br>Una <b>propuesta de diseño de información hecho para el Parque Las Palmeras en Renca,</b> especificamente en el skatepark. Con el objetivo de <b>incentivar el diálogo, participación entre vecinos de Renca</b> y skaters de la comunidad chilena se planeo una pintatón.<br><br>Un evento que consta de varias secciones, entre ellas una sección de información, una recreación del skatepark original, carteles, publicidad en medios sociales y más."
