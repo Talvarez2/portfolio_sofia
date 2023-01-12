@@ -1,9 +1,7 @@
 <template>
-  <vsa-list
-
-  >
+  <!-- <vsa-list> -->
     <!-- Here you can use v-for to loop through items  -->
-    <div v-for="(value, name) in data.data">
+    <!-- <div v-for="(value, name) in data.data">
       <vsa-item>
         <vsa-heading class="accordion-title" :class="[titleColor, bottomColor]">
           {{ name }}
@@ -18,7 +16,19 @@
         </vsa-content>
       </vsa-item>
     </div>
-  </vsa-list>
+  </vsa-list> -->
+  <div>
+    <div v-for="(value, name) in data.data">
+      <div class="title-font" :class="[titleColor, bottomColor]">{{ name }}</div>
+      <div :class="textColor">
+        <ul v-for="(e, idx) in value">
+          <li>
+            {{ e }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
   <!-- <div>
     <div v-for="(value, name) in data.data">
       <button class="accordion-title title-font" :class="[titleColor, bottomColor]">{{ name }}</button>
@@ -73,7 +83,7 @@ export default {
 </script>
 
 <style scoped>
-.vsa-list {
+/* .vsa-list {
   outline: none !important;
   background-color: transparent !important;
   cursor: pointer;
@@ -96,7 +106,7 @@ export default {
 
 .vsa-content {
   color: #D62D22 !important;
-}
+} */
 
 /* .vsa-item {
   outline: none !important;
@@ -130,7 +140,7 @@ export default {
 .accordion-title:after {
 
   content: "\002B";
-  /* color: #D62D22 !important; */
+  color: #D62D22 !important;
   font-weight: bold;
   float: right;
   margin-left: 5px;

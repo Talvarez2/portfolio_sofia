@@ -73,6 +73,7 @@ export default {
 .description-container {
   position: relative;
   height: 550px;
+  margin-bottom: 1em;
 }
 
 .description { 
