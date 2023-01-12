@@ -221,7 +221,7 @@ let info = {
           "type": "Carousel", 
           "bgColor": "bg-red2",
           "picture_folder_name": "carrusel",
-          "names": ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.jpg", ]
+          "names": ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png", ]
         },
       ]
     },

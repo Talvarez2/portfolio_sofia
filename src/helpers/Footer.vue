@@ -1,15 +1,14 @@
 <template>
-  <div class="bg-secondary">
+  <div class="bg-pink2">
     <div class="container py-3">
       <div class="row pt-1 align-items-center">
         <div
-          class="col-xl-6 col-bg-6 col-md-6 col-sm-12 pbelow"
-          style="color: white;"
+          class="col-xl-6 col-bg-6 col-md-6 col-sm-12 pbelow text-red"
         >
           <span>© 2021 Copyright: Tomás Alvarez</span>
         </div>
 
-        <div class="col-xl-6 col-bg-6 col-md-6 col-sm-12">
+        <!-- <div class="col-xl-6 col-bg-6 col-md-6 col-sm-12">
           <div class="text-center">
             <button
               class="btn btn-outline-secondary mx-2"
@@ -18,7 +17,7 @@
               <i class="fa fa-file"></i>
             </button>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

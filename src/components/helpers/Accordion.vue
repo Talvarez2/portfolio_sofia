@@ -19,7 +19,7 @@
   </vsa-list> -->
   <div>
     <div v-for="(value, name) in data.data">
-      <div class="title-font" :class="[titleColor, bottomColor]">{{ name }}</div>
+      <div class="accordion-title2 title-font" :class="[titleColor, bottomColor]">{{ name }}</div>
       <div :class="textColor">
         <ul v-for="(e, idx) in value">
           <li>
@@ -124,6 +124,11 @@ export default {
   font-size: 1.8em;
   transition: 0.4s;
 } */
+
+.accordion-title2 {
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+}
 
 .bottom-red {
   border-bottom: 1px solid #D62D22;
